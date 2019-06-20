@@ -4,8 +4,8 @@ To use "tagger" make sure you have:
 - pypng
 
 Use:
-pip install PyQRCode
-pip install pypng
+- pip install PyQRCode
+- pip install pypng
 
 
 
