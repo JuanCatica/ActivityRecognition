@@ -34,7 +34,7 @@ root.title(f"Tagger - Crane Proyect\t{UDP_IP} : {UDP_PORT}")
 frame = Frame(root)
 
 # QR Image
-img_path = os.path.dirname(os.path.realpath(__file__)) + "/images/ulr.png"
+img_path =  os.path.join(os.path.dirname(os.path.realpath(__file__)),"images","ulr.png")  
 url = pyqrcode.create(f'{UDP_IP}:{UDP_PORT}')
 url.png(img_path, scale=5)
 canvasQR = Canvas(frame, width = 200, height = 300)
@@ -44,9 +44,9 @@ canvasQR.pack()
 
 # Buttons
 def start():
-        file_path = os.path.dirname(os.path.realpath(__file__)) + "/files/"
+        file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),"files")
         if file_name.get() != "":
-                file_path = file_path + str(file_name.get()) +".csv"
+                file_path = os.path.join(file_path,str(file_name.get()) +".csv")
                 if os.path.isfile(file_path):
                         print("El archivo ya existe y no esta permitido sobrescribir")
                         return
