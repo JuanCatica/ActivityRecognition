@@ -30,6 +30,9 @@ class DevicesManagger():
         self.device_list_name = ["0-R1","1:R2","2:L1","3:L2"]
         self.sensor_list_name = ["Acc","Gyr","Mag"]
     
+    def get_name(self,devId,senId):
+        return "{}-{}".format(self.device_list_name[devId],self.sensor_list_name[senId])
+
     def set_path(self,path):
         self.path = path
         self._file = open(path,"w")
@@ -37,19 +40,15 @@ class DevicesManagger():
         for i in self._DEVICE_LIST:
             if i:
                 line += ",{}-x,{}-y,{}-z,{}-x,{}-y,{}-z,{}-x,{}-y,{}-z".format(
-                    self.get_name(i.ID,0),self.get_name(i.ID,1),self.get_name(i.ID,2),
-                    self.get_name(i.ID,0),self.get_name(i.ID,1),self.get_name(i.ID,2),
-                    self.get_name(i.ID,0),self.get_name(i.ID,1),self.get_name(i.ID,2)
+                    self.get_name(i.ID,0),self.get_name(i.ID,0),self.get_name(i.ID,0),
+                    self.get_name(i.ID,1),self.get_name(i.ID,1),self.get_name(i.ID,1),
+                    self.get_name(i.ID,2),self.get_name(i.ID,2),self.get_name(i.ID,2)
                     )
         line+= ",label"
-
         self._file.write(line + "\r\n")
         self._file.flush()
         self.is_writting = False
         self.lines = 0
-
-    def get_name(self,devId,senId):
-        return "{}-{}".format(self.device_list_name[devId],self.sensor_list_name[senId])
 
     def set_label_cursor(self, l_cursor):
         label = 0

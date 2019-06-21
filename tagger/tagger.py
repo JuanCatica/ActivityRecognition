@@ -28,7 +28,7 @@ UDP_PORT = 6565
 sock.close()
 sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 sock.bind((UDP_IP, UDP_PORT))
-root.title(f"Tagger - Crane Proyect\t{UDP_IP} : {UDP_PORT}")
+root.title(f"Tagger - Crane Project\t{UDP_IP} : {UDP_PORT}")
 
 # Contenedor
 frame = Frame(root)

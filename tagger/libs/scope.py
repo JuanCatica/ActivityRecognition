@@ -36,9 +36,9 @@ class Scope:
         self.canvas.create_line(1, (80*canal), self.buff_size-2, (80*canal),fill="black")
         for x,y,z in zip(X, Y, Z):
             if x != None and _x != None:
-                self.canvas.create_line(i, _x + (80*canal), i+1, x + (80*canal),fill="blue")
-                self.canvas.create_line(i, _y + (80*canal), i+1, y + (80*canal),fill="red")
-                self.canvas.create_line(i, _z + (80*canal), i+1, z + (80*canal),fill="green")
+                self.canvas.create_line(i, (80*canal) - _x, i+1, (80*canal) - x,fill="blue")
+                self.canvas.create_line(i, (80*canal) - _y, i+1, (80*canal) - y,fill="red")
+                self.canvas.create_line(i, (80*canal) - _z, i+1, (80*canal) - z,fill="green")
             _x = x
             _y = y
             _z = z
@@ -57,8 +57,7 @@ class Scope:
             color = "green" if is_writting else "black"
             self.canvas.create_line(i, self.height-26, i, self.height-32,fill=color)
             if is_writting:
-                self.canvas.create_line(i, self.height, i, self.height-25,fill=self.colors[label])
-        
+                self.canvas.create_line(i, self.height, i, self.height-25,fill=self.colors[label]) 
         self.canvas.create_text(self.buff_size+50,self.height-30,fill="darkblue",font="Arial",text=f"{self.deviceManagger.lines}")
         self.canvas.create_text(self.buff_size+50,self.height-15,fill="darkblue",font="Arial",text="Labels")
         self.canvas.after(50, self.plot_sensors)
