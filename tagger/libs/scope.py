@@ -60,4 +60,5 @@ class Scope:
                 self.canvas.create_line(i, self.height, i, self.height-25,fill=self.colors[label]) 
         self.canvas.create_text(self.buff_size+50,self.height-30,fill="darkblue",font="Arial",text=f"{self.deviceManagger.lines}")
         self.canvas.create_text(self.buff_size+50,self.height-15,fill="darkblue",font="Arial",text="Labels")
+        self.canvas.create_line(self.buff_size - 300,10,self.buff_size - 300,self.height-35,fill="black") ####### 6s : 300 pixeles
         self.canvas.after(50, self.plot_sensors)

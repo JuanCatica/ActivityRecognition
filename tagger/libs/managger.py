@@ -4,7 +4,7 @@ import time
 from collections import deque
 
 class DevicesManagger():
-    def __init__(self, buff_size = 700, D0 = True, D1 = True, D2 = True, D3 = True):
+    def __init__(self, buff_size = 700, D0 = True, D1 = True, D2 = False, D3 = False):
         # Devices an chanels
         self._DEVICE_LIST = []
         self._DEVICE_LIST.append(Device(0,buff_size)) if D0 else self._DEVICE_LIST.append(None)
@@ -27,7 +27,7 @@ class DevicesManagger():
         self._file = None
 
         # HardCode
-        self.device_list_name = ["0-R1","1:R2","2:L1","3:L2"]
+        self.device_list_name = ["0-R1","1-R2","2-L1","3-L2"]
         self.sensor_list_name = ["Acc","Gyr","Mag"]
     
     def get_name(self,devId,senId):

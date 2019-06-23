@@ -47,8 +47,8 @@ class Device:
 
     def get_line(self):
         line = ",{},{},{},{},{},{},{},{},{}".format(
-            self.AX[-1],self.AY[-1],self.AY[-1],
-            self.GX[-1],self.GY[-1],self.GY[-1],
-            self.MX[-1],self.MY[-1],self.MY[-1]
+            self.AX[-1],self.AY[-1],self.AZ[-1],
+            self.GX[-1],self.GY[-1],self.GZ[-1],
+            self.MX[-1],self.MY[-1],self.MZ[-1]
         )
         return line
