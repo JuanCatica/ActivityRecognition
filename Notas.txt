@@ -1,0 +1,1 @@
+Notas: Eliminar SgnalCollector.apk, en readme dejar la direccion del repositorio del proyecto de android
